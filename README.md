@@ -1,54 +1,43 @@
-Sistema de Semáforo con Raspberry Pi y Python
-Proyecto desarrollado para la materia de Sistemas Embebidos, enfocado en el control de hardware mediante los pines GPIO de una Raspberry Pi utilizando Python y la librería gpiozero.
+# 🚦 Sistema de Semáforo con Raspberry Pi y Python
+> *Proyecto desarrollado para la materia de Sistemas Embebidos*
 
-📋 Descripción del Proyecto
-Este repositorio contiene scripts orientados a la práctica de sistemas embebidos, destacando el control secuencial de un semáforo (LEDs rojo, amarillo y verde) con retardos de tiempo y gestión segura de interrupciones, además de otras prácticas complementarias de parpadeo y recorridos de luces.
+---
 
-🧰 Componentes Utilizados
-Raspberry Pi (cualquier modelo con pines GPIO de 40 pines).
+## 📌 Descripción del Proyecto
 
-LEDs:
+Este repositorio contiene scripts orientados a la práctica de sistemas embebidos, destacando el control secuencial de un semáforo (LEDs rojo, amarillo y verde) mediante los pines **GPIO** de una **Raspberry Pi**, utilizando **Python** y la librería `gpiozero`. 
 
-1x LED Rojo
+Incluye retardos de tiempo, gestión segura de interrupciones y prácticas complementarias de parpadeo y recorridos de luces.
 
-1x LED Amarillo
+---
 
-1x LED Verde
+## 🧰 Componentes Utilizados
 
-Resistencias: 3x resistencias de 220Ω o 330Ω.
+| Componente | Cantidad | Detalle |
+| :--- | :---: | :--- |
+| **Raspberry Pi** | 1 | Cualquier modelo con GPIO de 40 pines |
+| **LED Rojo** | 1 | Indicador de alto |
+| **LED Amarillo** | 1 | Indicador de precaución |
+| **LED Verde** | 1 | Indicador de avance |
+| **Resistencias** | 3 | $220\Omega$ o $330\Omega$ |
+| **Accesorios** | - | Protoboard y cables de conexión (Jumpers) |
 
-Cables de conexión (Jumpers) y Protoboard.
+---
 
-⚡ Esquema de Conexiones (Pines BCM)
-Componente	Pin GPIO (Raspberry Pi)	Conexión Física
-LED Rojo	GPIO 17	Ánodo → Resistencia → GPIO 17
-LED Amarillo	GPIO 27	Ánodo → Resistencia → GPIO 27
-LED Verde	GPIO 22	Ánodo → Resistencia → GPIO 22
-Cátodos (GND)	GND	Común a todos los LEDs
-🚀 Instalación y Ejecución
-Actualizar el sistema e instalar la librería GPIO:
+## ⚡ Esquema de Conexiones (Pines BCM)
 
-Bash
-sudo apt update
-sudo apt install python3-gpiozero
-Clonar el repositorio:
+| Componente | Pin GPIO (Raspberry Pi) | Conexión Física |
+| :--- | :---: | :--- |
+| **LED Rojo** | `GPIO 17` | Ánodo $\rightarrow$ Resistencia $\rightarrow$ GPIO 17 |
+| **LED Amarillo** | `GPIO 27` | Ánodo $\rightarrow$ Resistencia $\rightarrow$ GPIO 27 |
+| **LED Verde** | `GPIO 22` | Ánodo $\rightarrow$ Resistencia $\rightarrow$ GPIO 22 |
+| **Cátodos (GND)** | `GND` | Común a todos los LEDs |
 
+---
 
-cd semaforo_led
-Ejecutar el script del semáforo:
+## 🚀 Instalación y Ejecución
 
-Bash
-python3 semaforo.py
-(Presiona Ctrl + C para detener la ejecución y apagar los LEDs de forma segura).
-
-📂 Estructura del Repositorio
-semaforo.py - Control cíclico de las tres luces del semáforo con advertencia y apagado seguro.
-
-PRACTICALEDBLINK.PY - Práctica básica de parpadeo (Blink) de un LED.
-
-recorridoled.py - Secuencia de desplazamiento de luces.
-
-BOARD.PY - Script de configuración inicial y mapeo de pines.
-
-👤 Autor
-Alumno: Medel Rosas Alfredo
+1. **Actualizar el sistema e instalar la librería GPIO:**
+   ```bash
+   sudo apt update
+   sudo apt install python3-gpiozero
